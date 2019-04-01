@@ -1,4 +1,5 @@
 const mqtt = require("mqtt");
+const chalk = require("chalk");
 const { broker } = require("../config");
 
 const client = mqtt.connect(broker);
@@ -6,20 +7,20 @@ const client = mqtt.connect(broker);
 exports.connect = () => {
   client.on("connect", () => {
     client.subscribe("mytopic", { qos: 0 });
-    console.log("mqtt client connected");
+    console.log(chalk.green("mqtt client connected"));
   });
 
   client.on("error", err => {
-    console.log(err);
+    console.log(chalk.red(err));
     client.end();
   });
 
   client.on("message", (topic, message) => {
-    console.log(message.toString());
+    console.log(chalk.green(message.toString()));
   });
 
   client.on("close", () => {
-    console.log("mqtt client disconnected");
+    console.log(chalk.green("mqtt client disconnected"));
   });
 };
 
