@@ -1,0 +1,21 @@
+{
+  "name": "mqtt-api",
+  "version": "1.0.0",
+  "description": "A simple Express-MQTT API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Sebastian Matias Segura (seb7887)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mosca": "^2.8.3",
+    "mqtt": "^2.18.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
