@@ -10,7 +10,7 @@ server.on("ready", () => {
   console.log("Mosca MQTT broker ready");
 });
 
-server.on("clientConnected", () => {
+server.on("clientConnected", client => {
   console.log("Client connected", client.id);
 });
 

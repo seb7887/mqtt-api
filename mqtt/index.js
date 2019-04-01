@@ -1,6 +1,7 @@
 const mqtt = require("mqtt");
+const { broker } = require("../config");
 
-const client = mqtt.connect("mqtt://test.mosquitto.org");
+const client = mqtt.connect(broker);
 
 exports.connect = () => {
   client.on("connect", () => {
